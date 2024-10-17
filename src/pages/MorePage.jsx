@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const OrganizationDetail = ({ data, updateOrganization }) => {
   const { id } = useParams();
@@ -36,7 +36,7 @@ const OrganizationDetail = ({ data, updateOrganization }) => {
         <Form.Item name="address" label="Manzil" rules={[{ required: true, message: 'Manzil kiriting!' }]}>
           <Input />
         </Form.Item>
-        <Button type="primary" onClick={(e) => Navigate(-1)} htmlType="submit">Yangilash</Button>
+        <Button type="primary" htmlType="submit">Yangilash</Button>
       </Form>
     </div>
   );
