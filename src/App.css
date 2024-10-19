@@ -79,3 +79,170 @@ html, body {
   height: 2px;
   background: #ffffff;
 }
+
+/* Overall layout styles */
+.admin-layout {
+  height: 100vh;
+}
+
+.header {
+  background: #001529;
+  color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  margin-right: 16px;
+}
+
+.sidebar {
+  background: #001529;
+}
+
+.sidebar .logo {
+  height: 32px;
+  margin: 16px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.line {
+  height: 1px;
+  background: #fff;
+  margin: 0 16px;
+}
+
+/* Content styles */
+.content {
+  padding: 20px;
+  background: #f0f2f5;
+}
+
+.table-header {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Button styles */
+.ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* Modal styles */
+.ant-modal-header {
+  background: #001529;
+  color: white;
+}
+
+.ant-modal-body {
+  padding: 24px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search {
+    margin-top: 10px;
+    margin-right: 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+.admin-layout {
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #001529;
+}
+
+.header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  margin-right: 16px;
+}
+
+.content {
+  padding: 24px;
+  background: #fff;
+}
+
+.table {
+  background: #f9f9f9;
+}
+.organization-detail {
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.info {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.info p {
+  font-size: 16px;
+  color: #555;
+}
+
+.edit-button {
+  background-color: #1890ff; /* Ant Design blue color */
+  border: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.edit-button:hover {
+  background-color: #40a9ff; /* Lighter blue on hover */
+}
+
+.not-found {
+  text-align: center;
+  font-size: 18px;
+  color: #f5222d; /* Red color for not found message */
+}

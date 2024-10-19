@@ -1,40 +1,21 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // 'Routes' va 'Route' import qilindi
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminPanel from './pages/AdminPanel';
-import OrganizationDetail from './pages/MorePage';
+import OrganizationDetail from './pages/MorePage'; // Tashkilot batafsil ma'lumotlari sahifasi
 
 const App = () => {
   const [data, setData] = useState([
-    {
-      key: 1,
-      id: 1,
-      name: '—',
-      inn: '223344556',
-      status: 'Faol',
-      address: 'Toshkent, Chilonzor 9kv',
-      createdAt: '05.11.2018',
-    },
-    {
-      key: 2,
-      id: 2,
-      name: 'Cambridge academy',
-      inn: '—',
-      status: 'Faol',
-      address: 'Toshkent, Chilonzor 10kv',
-      createdAt: '05.11.2005',
-    },
+    // Buning o'rniga real tashkilotlar ro'yxatini joylang
+    { id: 1, name: 'Tashkilot 1', inn: '123456789', address: 'Manzil 1', status: 'Faol', createdAt: '2024-01-01' },
+    { id: 2, name: 'Tashkilot 2', inn: '987654321', address: 'Manzil 2', status: 'Faol', createdAt: '2024-02-01' },
+    // ... boshqa tashkilotlar
   ]);
-
-  const updateOrganization = (id, updatedValues) => {
-    const newData = data.map(item => (item.id === parseInt(id) ? { ...item, ...updatedValues } : item));
-    setData(newData);
-  };
 
   return (
     <Router>
-      <Routes> {/* Switch o'rniga Routes ishlatilmoqda */}
-        <Route path="/" element={<AdminPanel data={data} setData={setData} />} /> {/* component propslarini element bilan almashtiring */}
-        <Route path="/organization/:id" element={<OrganizationDetail data={data} updateOrganization={updateOrganization} />} />
+      <Routes>
+        <Route path="/" element={<AdminPanel data={data} setData={setData} />} />
+        <Route path="/organization/:id" element={<OrganizationDetail data={data} updateOrganization={setData} />} />
       </Routes>
     </Router>
   );
