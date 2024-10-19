@@ -10,24 +10,24 @@ const OrganizationDetail = ({ data, updateOrganization }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    console.log(data); // data ni konsolga chiqarish
+    console.log(data); 
     const org = data.find(item => item.id === parseInt(id));
     if (org) {
       setOrganization(org);
-      form.setFieldsValue(org); // Formni tashkilot ma'lumotlari bilan to'ldirish
+      form.setFieldsValue(org); 
     } else {
-      message.error('Tashkilot topilmadi'); // Agar tashkilot topilmasa xabar berish
+      message.error('Tashkilot topilmadi');
     }
   }, [id, data, form]);
 
   const handleUpdate = (values) => {
-    updateOrganization(id, values); // Yangilangan ma'lumotlarni o'rnatish
+    updateOrganization(id, values); 
     message.success('Tashkilot muvaffaqiyatli yangilandi!');
-    setIsModalVisible(false); // Modalni yopish
+    setIsModalVisible(false); 
   };
 
   const handleEdit = () => {
-    setIsModalVisible(true); // Modalni ochish
+    setIsModalVisible(true);
   };
 
   if (!organization) return <div className="not-found">Tashkilot topilmadi</div>;
@@ -44,30 +44,30 @@ const OrganizationDetail = ({ data, updateOrganization }) => {
       <Modal
         title="Tashkilotni tahrirlash"
         visible={isModalVisible}
-        onOk={() => form.submit()} // Formani yuborish
-        onCancel={() => setIsModalVisible(false)} // Modalni yopish
+        onOk={() => form.submit()} 
+        onCancel={() => setIsModalVisible(false)} 
         okText="Yangilash"
         cancelText="Bekor qilish"
       >
-        <Form form={form} layout="vertical" onFinish={handleUpdate}> {/* Tahrirlash uchun form */}
+        <Form form={form} layout="vertical" onFinish={handleUpdate}>
           <Form.Item
             name="name"
             label="Tashkilot nomi"
-            rules={[{ required: true, message: 'Tashkilot nomi kiriting!' }]} // Validatsiya
+            rules={[{ required: true, message: 'Tashkilot nomi kiriting!' }]} 
           >
             <Input />
           </Form.Item>
           <Form.Item
             name="inn"
             label="INN"
-            rules={[{ required: true, message: 'INN kiriting!' }]} // Validatsiya
+            rules={[{ required: true, message: 'INN kiriting!' }]} 
           >
             <Input />
           </Form.Item>
           <Form.Item
             name="address"
             label="Manzil"
-            rules={[{ required: true, message: 'Manzil kiriting!' }]} // Validatsiya
+            rules={[{ required: true, message: 'Manzil kiriting!' }]}
           >
             <Input />
           </Form.Item>

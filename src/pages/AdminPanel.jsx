@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Layout, Menu, Button, Table, Input, Space, Dropdown, Modal, Form, Input as AntInput, message } from 'antd';
 import { HomeOutlined, UserOutlined, PlusOutlined, EditOutlined, DeleteOutlined, MoreOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import OrganizationDetail from '../pages/MorePage'; // Importing the OrganizationDetail component
-import '../App.css'; // CSS faylini import qilish
+import OrganizationDetail from '../pages/MorePage'; 
+import '../App.css'; 
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
 
 const AdminPanel = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState([]); // Initial data
+  const [data, setData] = useState([]); 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -64,8 +64,8 @@ const AdminPanel = () => {
   };
 
   const handleMore = (record) => {
-    navigate(`/organization/${record.id}`); // Batafsil ma'lumot sahifasiga o'tish
-  };
+    navigate(`/organization/${record.id}`); 
+    };
 
   const columns = [
     { title: 'ID', dataIndex: 'id', key: 'id', width: '5%' },
